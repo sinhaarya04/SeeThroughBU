@@ -1,0 +1,33 @@
+Dear {{ merchant_name }} Support Team,
+
+I am writing to request the cancellation of my subscription/trial before any charges are applied to my account.
+
+{% if order_id %}
+Order/Account ID: {{ order_id }}
+{% endif %}
+
+{% if capture_hash %}
+Checkout Session Hash: {{ capture_hash }}
+{% endif %}
+
+I discovered through See-Through Checkout that this subscription may include auto-renewal terms
+that were not clearly disclosed during the checkout process. To avoid any unintended charges,
+I am requesting immediate cancellation.
+
+Please confirm the cancellation in writing and ensure that:
+1. No further charges will be made to my payment method
+2. My subscription/trial is fully cancelled
+3. I receive a confirmation email with a cancellation reference number
+
+If you have any questions or require additional information to process this cancellation,
+please contact me at your earliest convenience.
+
+Thank you for your prompt attention to this matter.
+
+Best regards,
+{{ user_email }}
+
+---
+This cancellation request was generated with assistance from See-Through Checkout,
+a consumer protection service that helps identify hidden fees and unclear subscription terms.
+

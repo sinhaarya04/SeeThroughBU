@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Retro Win95 Palette */
+    --background: 49 15% 89%;  /* #ECE9D8 - Win95 gray */
+    --foreground: 0 0% 7%;     /* #111111 - ink */
+
+    --card: 49 15% 89%;
+    --card-foreground: 0 0% 7%;
+
+    --popover: 49 15% 89%;
+    --popover-foreground: 0 0% 7%;
+
+    --primary: 207 100% 43%;   /* #0078D7 - Windows blue */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 198 100% 47%; /* #00A1F1 - lighter blue */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 50%;
+    --muted-foreground: 0 0% 30%;
+
+    --accent: 44 100% 61%;     /* #FFC83D - yellow accent */
+    --accent-foreground: 0 0% 7%;
+
+    --destructive: 352 87% 50%; /* #E81123 - danger red */
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 123 86% 42%;    /* #16C60C - success green */
+    --success-foreground: 0 0% 100%;
+
+    --border: 0 0% 50%;
+    --input: 0 0% 100%;
+    --ring: 207 100% 43%;
+
+    --radius: 0;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Keep retro light theme consistent */
+    --background: 49 15% 89%;
+    --foreground: 0 0% 7%;
+    --card: 49 15% 89%;
+    --card-foreground: 0 0% 7%;
+    --popover: 49 15% 89%;
+    --popover-foreground: 0 0% 7%;
+    --primary: 207 100% 43%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 198 100% 47%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 50%;
+    --muted-foreground: 0 0% 30%;
+    --accent: 44 100% 61%;
+    --accent-foreground: 0 0% 7%;
+    --destructive: 352 87% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 50%;
+    --input: 0 0% 100%;
+    --ring: 207 100% 43%;
+    --sidebar-background: 49 15% 89%;
+    --sidebar-foreground: 0 0% 7%;
+    --sidebar-primary: 207 100% 43%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 44 100% 61%;
+    --sidebar-accent-foreground: 0 0% 7%;
+    --sidebar-border: 0 0% 50%;
+    --sidebar-ring: 207 100% 43%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+    font-family: 'VT323', 'IBM Plex Mono', monospace;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Press Start 2P', system-ui;
+    line-height: 1.6;
+  }
+}
+
+/* Win95 Beveled Borders */
+@layer components {
+  .border-raised {
+    border: 2px solid;
+    border-color: hsl(0 0% 100%) hsl(0 0% 50%) hsl(0 0% 50%) hsl(0 0% 100%);
+    box-shadow: inset 1px 1px 0 hsl(0 0% 87%), inset -1px -1px 0 hsl(0 0% 0% / 0.5);
+  }
+
+  .border-sunken {
+    border: 2px solid;
+    border-color: hsl(0 0% 50%) hsl(0 0% 100%) hsl(0 0% 100%) hsl(0 0% 50%);
+    box-shadow: inset 1px 1px 0 hsl(0 0% 0% / 0.5), inset -1px -1px 0 hsl(0 0% 87%);
+  }
+
+  .border-window {
+    border: 3px solid;
+    border-color: hsl(0 0% 100%) hsl(0 0% 50%) hsl(0 0% 50%) hsl(0 0% 100%);
+  }
+
+  /* CRT Scanlines Effect */
+  .crt-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.12) 0px,
+      rgba(0, 0, 0, 0.12) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .crt-glow {
+    filter: contrast(1.02) saturate(1.1);
+  }
+
+  /* Pixel-perfect text */
+  .pixel-text {
+    font-family: 'Press Start 2P', system-ui;
+    image-rendering: pixelated;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* LED Indicator */
+  .led-on {
+    background: hsl(var(--success));
+    box-shadow: 0 0 8px hsl(var(--success)), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  }
+
+  .led-off {
+    background: hsl(0 0% 30%);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+}
