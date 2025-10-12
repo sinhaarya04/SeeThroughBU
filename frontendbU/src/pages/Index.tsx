@@ -31,6 +31,7 @@ const Index = () => {
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
   const [reminderDate, setReminderDate] = useState<Date | null>(null);
   const [evidenceCaptured, setEvidenceCaptured] = useState(false);
+  const [detectedDomain, setDetectedDomain] = useState<string>("—");
   
   // Preferences state
   const [ocrEnabled, setOcrEnabled] = useState(true);
@@ -75,6 +76,15 @@ const Index = () => {
         totalFeesDetected += parseFloat(feeMatch[1]);
       }
     });
+    
+    // Extract domain from issues
+    const domainIssue = sampleIssues.find(issue => issue.type === 'domain');
+    if (domainIssue) {
+      const domainMatch = domainIssue.text.match(/([a-z0-9-]+\.[a-z]{2,})/i);
+      if (domainMatch) {
+        setDetectedDomain(domainMatch[1]);
+      }
+    }
     
     setImpact({ 
       riskScore: Math.round(riskScore),
@@ -157,6 +167,12 @@ const Index = () => {
                 }
               });
               
+              // Extract domain from HTML content or response
+              const domainMatch = htmlContent.match(/([a-z0-9-]+\.[a-z]{2,})/i);
+              if (domainMatch) {
+                setDetectedDomain(domainMatch[1]);
+              }
+              
               setIssues(detectedIssues);
               setImpact({ 
                 riskScore: data.risk_score,
@@ -238,6 +254,13 @@ const Index = () => {
                 });
               }
             });
+            
+            // Extract domain from OCR text (stored in data.ocr_text or data.text)
+            const ocrText = data.ocr_text || data.text || '';
+            const domainMatch = ocrText.match(/(?:on |domain:? ?)?([a-z0-9-]+\.[a-z]{2,})/i);
+            if (domainMatch) {
+              setDetectedDomain(domainMatch[1]);
+            }
             
             setIssues(detectedIssues);
             setImpact({ 
@@ -450,7 +473,7 @@ const Index = () => {
               <StatusBar95>
                 <LED label="Camera" on={cameraOn} />
                 <div className="border-sunken px-2 py-0.5">
-                  domain: {issues.length > 0 ? "amaz0n-deals.cc" : "—"}
+                  domain: {detectedDomain}
                 </div>
                 <div className="border-sunken px-2 py-0.5">
                   confidence: {issues.length > 0 ? "94%" : "—"}
