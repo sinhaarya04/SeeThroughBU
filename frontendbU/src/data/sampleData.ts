@@ -31,7 +31,7 @@ export const sampleIssues: CheckoutIssue[] = [
   {
     id: "4",
     icon: "🎭",
-    text: "Suspicious look-alike domain: amaz0n-deals.cc",
+    text: "Suspicious domain: tradinginterview.co",
     type: "domain",
     severity: "high"
   }
