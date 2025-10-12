@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - amaz0n-deals.cc</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .checkout-box {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #ff9900;
+            font-size: 28px;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .total {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 16px;
+        }
+        .checkbox-option {
+            margin: 15px 0;
+            padding: 15px;
+            background: #fff8e1;
+            border: 1px solid #ffd54f;
+            border-radius: 4px;
+        }
+        .checkbox-option input {
+            margin-right: 10px;
+        }
+        .fine-print {
+            font-size: 8px;
+            color: #999;
+            margin-top: 30px;
+            line-height: 1.2;
+        }
+        .btn-checkout {
+            background: #ff9900;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 4px;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .trial-badge {
+            background: #4caf50;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .hidden-fee {
+            font-size: 11px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="checkout-box">
+        <h1>🛒 Complete Your Order</h1>
+        <p style="color: #888; font-size: 14px;">amaz0n-deals.cc/checkout</p>
+        
+        <div style="margin: 20px 0;">
+            <div class="item">
+                <span>Premium Headphones</span>
+                <span>$79.99</span>
+            </div>
+            <div class="item">
+                <span>Shipping & Handling</span>
+                <span>$5.00</span>
+            </div>
+            <div class="item hidden-fee">
+                <span>Service fee</span>
+                <span>$6.99</span>
+            </div>
+            <div class="item hidden-fee">
+                <span>Processing fee</span>
+                <span>$4.99</span>
+            </div>
+        </div>
+
+        <!-- Pre-checked addon (DARK PATTERN) -->
+        <div class="checkbox-option">
+            <input type="checkbox" id="premium" checked>
+            <label for="premium">
+                <strong>⭐ Premium Protection Plan - $12.99/month</strong><br>
+                <span style="font-size: 12px;">Get extended warranty and priority support</span>
+            </label>
+        </div>
+
+        <!-- Pre-checked trial subscription (DARK PATTERN) -->
+        <div class="checkbox-option">
+            <input type="checkbox" id="trial" checked>
+            <label for="trial">
+                <span class="trial-badge">FREE TRIAL</span>
+                <strong> Prime Deals Membership</strong><br>
+                <span style="font-size: 12px;">Start your 7-day free trial today!</span>
+            </label>
+        </div>
+
+        <!-- Hidden auto-renew in pre-checked checkbox -->
+        <div style="margin: 15px 0;">
+            <input type="checkbox" id="agree" checked>
+            <label for="agree" style="font-size: 11px; color: #666;">
+                I agree to the terms and conditions and understand that after the trial period, 
+                I will be automatically charged $19.99/month unless I cancel
+            </label>
+        </div>
+
+        <div class="total">
+            <span>Subtotal:</span>
+            <span>
+                <span class="old-price">$79.99</span>
+                <span style="color: #4caf50; margin-left: 10px;">$47.18</span>
+            </span>
+        </div>
+
+        <button class="btn-checkout">🔒 Complete Order Now</button>
+
+        <!-- Buried fine print (DARK PATTERN) -->
+        <div class="fine-print">
+            * Service fee of $6.99 applies to all transactions. Processing fee of $4.99 charged separately. 
+            Premium Protection Plan will auto-renew at $12.99/month starting immediately. 
+            Prime Deals Membership trial converts to paid subscription ($19.99/month) automatically after 7 days. 
+            Cancellation must be made 48 hours before trial ends. Refunds not available for subscription fees. 
+            By clicking Complete Order, you authorize recurring charges to your payment method. 
+            Shipping time 7-14 business days. Returns subject to 35% restocking fee. 
+            Customer service available Monday-Friday 10am-2pm EST only.
+        </div>
+    </div>
+</body>
+</html>
+
