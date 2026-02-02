@@ -1,3 +1,64 @@
+# SeeThroughBU
+
+[![Repo](https://img.shields.io/badge/GitHub-SeeThroughBU-181717?logo=github)](https://github.com/sinhaarya04/SeeThroughBU)
+
+## Overview
+
+``` ╔═══════════════════════════════════════════════════════════════════════════╗ ║                                                                           ║ ║   ░██████╗███████╗███████╗████████╗██╗  ██╗██████╗  ██████╗ ██╗   ██╗   ║ ║   ██╔════╝██╔════╝██╔════╝╚══██╔══╝██║  ██║██╔══██╗██╔═══██╗██║   ██║   ║ ║   ╚█████╗ █████╗  █████╗     ██║   ███████║██████╔╝██║   ██║██║   ██║   ║ ║   ░╚═══██╗██╔══╝  ██╔══╝     ██║   ██╔══██║██╔══██╗██║   ██║██║   ██║   ║ ║   ██████╔╝███████╗███████╗   ██║   ██║  ██║██║  ██║╚██████╔╝╚██████╔╝   ║ ║   ╚═════╝ ╚══════╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝    ║ ║                                                                           ║ ║              🕵️  D A R K   P A T T E R N   D E T E C T O R  💸           ║ ║                                                                           ║ ║                    Your Financial Guardian in Retro Style                ║ ║                                                                           ║ ╚═══════════════════════════════════════════════════════════════════════════╝ ```
+
+## Features
+
+- Project-specific implementation and experiments
+
+## Tech Stack
+
+- (not specified)
+
+## Getting Started
+
+### Prerequisites
+
+- Git
+- A recent runtime for the stack above (e.g., Python 3.10+ or Node 18+)
+
+### Installation
+
+```bash
+# No install steps documented yet
+```
+
+### Run / Usage
+
+```bash
+# No run steps documented yet
+```
+
+## Project Structure
+
+- `frontendbU/`
+- `SeeThrough/`
+- `README.md`
+- `test1.png`
+- `test2.png`
+- `test3.png`
+
+## Roadmap
+
+- [ ] Add clearer usage examples and expected outputs
+- [ ] Add tests / CI (if applicable)
+- [ ] Document data sources and assumptions (if applicable)
+
+## License
+
+No license file found in this repository.
+
+
+---
+
+## Notes / Original README
+
+The content below is preserved from the previous README for reference.
+
 ```
 ╔═══════════════════════════════════════════════════════════════════════════╗
 ║                                                                           ║
@@ -345,4 +406,3 @@ Found a bug? Have a feature request? Want to say hi?
 **[⬇️ Clone the Repo](#quick-start)** • **[📖 Read the Docs](#project-structure)** • **[🎮 Try the Demo](#how-to-use-seethrough)**
 
 </div>
-
